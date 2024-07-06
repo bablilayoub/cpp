@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 12:12:26 by abablil           #+#    #+#             */
-/*   Updated: 2024/07/06 14:22:48 by abablil          ###   ########.fr       */
+/*   Updated: 2024/07/06 14:29:27 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,7 +145,7 @@ bool Account::makeWithdrawal(int withdrawal)
 
 int Account::checkAmount(void) const
 {
-	ret
+	return this->_amount;
 }
 
 void Account::displayStatus(void) const
