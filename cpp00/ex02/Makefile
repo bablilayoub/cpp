@@ -1,11 +1,11 @@
-NAME = phoneBook
+NAME = account
 
 COMPILER = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp PhoneBook.cpp Contact.cpp
+SRCS = tests.cpp Account.cpp
 OBJS = $(SRCS:.cpp=.o)
-HEADERS = PhoneBook.hpp Contact.hpp
+HEADERS = Account.hpp
 
 $(NAME): $(OBJS)
 	$(COMPILER) $(FLAGS) $(OBJS) -o $(NAME)

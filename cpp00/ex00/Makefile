@@ -1,16 +1,16 @@
 NAME = megaphone
 
-COMPILE = c++
+COMPILER = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = megaphone.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 $(NAME): $(OBJS)
-	$(COMPILE) $(FLAGS) $(OBJS) -o $(NAME)
+	$(COMPILER) $(FLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp
-	$(COMPILE) $(FLAGS) -c $< -o $@
+	$(COMPILER) $(FLAGS) -c $< -o $@
 
 all: $(NAME)
 
