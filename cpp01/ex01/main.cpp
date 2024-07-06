@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/27 23:32:25 by abablil           #+#    #+#             */
-/*   Updated: 2024/07/06 15:16:26 by abablil          ###   ########.fr       */
+/*   Created: 2024/07/06 16:14:03 by abablil           #+#    #+#             */
+/*   Updated: 2024/07/06 16:19:56 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Zombie.hpp"
 
-#include <iostream>
-#include <iomanip>
-#include "Contact.hpp"
-
-class PhoneBook
+int main()
 {
-public:
-	int total_contacts;
-	void add_new_contact(PhoneBook &phone_book, int current_i);
-	void show_search(PhoneBook &phone_book);
-
-private:
-	Contact contacts[8];
-	void prompt_search(PhoneBook &phone_book);
-	int valid_input(std::string input, int i);
-};
+	Zombie	*zombies;
+	int		number_of_zombies = 9;
+	
+	zombies = zombieHorde(number_of_zombies, "Horde");
+	for (int i = 0; i < number_of_zombies; i++)
+		zombies[i].announce();
+	delete []zombies;
+}
