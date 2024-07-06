@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 12:12:26 by abablil           #+#    #+#             */
-/*   Updated: 2024/07/06 14:18:18 by abablil          ###   ########.fr       */
+/*   Updated: 2024/07/06 14:22:48 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,9 +117,6 @@ void Account::makeDeposit(int deposit)
 
 bool Account::makeWithdrawal(int withdrawal)
 {
-	// index:0;p_amount:47;withdrawal:refused
-	// index:1;p_amount:819;withdrawal:34;amount:785;nb_withdrawals:1
-
 	Account::_displayTimestamp();
 	std::cout
 		<< "index:"
