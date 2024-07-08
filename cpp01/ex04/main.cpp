@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 19:39:22 by abablil           #+#    #+#             */
-/*   Updated: 2024/07/08 09:43:04 by abablil          ###   ########.fr       */
+/*   Updated: 2024/07/08 16:41:03 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ bool check_errors(int total, char **args)
 		std::cout << "Usage : ./sed filename s1 s2" << std::endl;
 		return false;
 	}
-	if (std::string(args[1]).empty() || std::string(args[2]).empty() || std::string(args[3]).empty())
+	if (std::string(args[1]).empty() || std::string(args[2]).empty())
 	{
 		std::cout << "Arguments can't be empty" << std::endl;
 		return false;
@@ -30,22 +30,25 @@ bool check_errors(int total, char **args)
 
 int main(int total, char **args)
 {
+	std::string line;
+	std::string search_string = args[2];
+	std::string replace_string = args[3];
+	
 	if (!check_errors(total, args))
 		return 1;
-
+		
 	std::ifstream in_file(args[1]);
-	std::ofstream out_file(std::string(args[1]) + ".replace");
-	std::string line;
-
-	if (in_file.fail() || out_file.fail())
+	if (in_file.fail())
 	{
 		std::cout << "Failed to open file" << std::endl;
 		return 1;
 	}
-
-	std::string search_string = args[2];
-	std::string replace_string = args[3];
-
+	std::ofstream out_file(std::string(args[1]) + ".replace");
+	if (out_file.fail())
+	{
+		std::cout << "Failed to open file" << std::endl;
+		return 1;
+	}
 	while (std::getline(in_file, line))
 	{
 		std::string new_line;
@@ -65,7 +68,10 @@ int main(int total, char **args)
 				break;
 			}
 		}
-		out_file << new_line << std::endl;
+		if (in_file.eof())
+			out_file << new_line;
+		else
+			out_file << new_line << std::endl;
 	}
 
 	in_file.close();
