@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 19:39:22 by abablil           #+#    #+#             */
-/*   Updated: 2024/07/08 16:41:03 by abablil          ###   ########.fr       */
+/*   Updated: 2024/07/08 17:13:21 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ int main(int total, char **args)
 		else
 			out_file << new_line << std::endl;
 	}
-
 	in_file.close();
 	out_file.close();
 	return 0;
