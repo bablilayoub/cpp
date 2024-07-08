@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 09:50:15 by abablil           #+#    #+#             */
-/*   Updated: 2024/07/08 11:38:08 by abablil          ###   ########.fr       */
+/*   Updated: 2024/07/08 16:52:15 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,6 @@ int check_errors(int total, char **args)
 	if (std::string(args[1]).empty())
 	{
 		std::cout << "Level can't be empty" << std::endl;
-		return (0);
-	}
-	if (std::string(args[1]) != "DEBUG" && std::string(args[1]) != "INFO" && std::string(args[1]) != "WARNING" && std::string(args[1]) != "ERROR")
-	{
-		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 		return (0);
 	}
 	return (1);
