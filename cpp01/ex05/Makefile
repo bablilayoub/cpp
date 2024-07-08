@@ -1,15 +1,16 @@
-NAME = sed
+NAME = Harl
 
 COMPILER = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp
+SRCS = main.cpp Harl.cpp
 OBJS = $(SRCS:.cpp=.o)
+HEADERS = Harl.hpp
 
 $(NAME): $(OBJS)
 	$(COMPILER) $(FLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp $(HEADERS)
 	$(COMPILER) $(FLAGS) -c $< -o $@
 
 all: $(NAME)

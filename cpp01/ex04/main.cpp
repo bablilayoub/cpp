@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 19:39:22 by abablil           #+#    #+#             */
-/*   Updated: 2024/07/06 20:18:53 by abablil          ###   ########.fr       */
+/*   Updated: 2024/07/08 09:43:04 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,11 @@ int main(int total, char **args)
 	if (!check_errors(total, args))
 		return 1;
 
-	std::ifstream file;
-	std::ofstream outfile("test.txt");
+	std::ifstream in_file(args[1]);
+	std::ofstream out_file(std::string(args[1]) + ".replace");
 	std::string line;
 
-	file.open(args[1]);
-	if (file.fail())
+	if (in_file.fail() || out_file.fail())
 	{
 		std::cout << "Failed to open file" << std::endl;
 		return 1;
@@ -47,29 +46,29 @@ int main(int total, char **args)
 	std::string search_string = args[2];
 	std::string replace_string = args[3];
 
-	while (std::getline(file, line))
+	while (std::getline(in_file, line))
 	{
 		std::string new_line;
-		size_t pos = 0;
-		while (pos < line.length())
+		size_t i = 0;
+		while (i < line.length())
 		{
-			size_t found_pos = line.find(search_string, pos);
+			size_t found_pos = line.find(search_string, i);
 			if (found_pos < line.length())
 			{
-				new_line.append(line, pos, found_pos - pos);
+				new_line.append(line, i, found_pos - i);
 				new_line.append(replace_string);
-				pos = found_pos + search_string.length();
+				i = found_pos + search_string.length();
 			}
 			else
 			{
-				new_line.append(line, pos, line.length() - pos);
+				new_line.append(line, i, line.length() - i);
 				break;
 			}
 		}
-		outfile << new_line << std::endl;
+		out_file << new_line << std::endl;
 	}
 
-	file.close();
-	outfile.close();
+	in_file.close();
+	out_file.close();
 	return 0;
 }
