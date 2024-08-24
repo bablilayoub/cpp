@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/06 15:14:53 by abablil           #+#    #+#             */
-/*   Updated: 2024/08/24 15:24:14 by abablil          ###   ########.fr       */
+/*   Created: 2024/08/22 16:03:46 by abablil           #+#    #+#             */
+/*   Updated: 2024/08/22 16:46:26 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#pragma once
 
-Zombie::Zombie(){}
+#include <iostream>
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-Zombie::Zombie(std::string name)
-{
-	this->name = name;
-}
-
-Zombie::~Zombie()
-{
-	std::cout << this->name << ": Has been destroyed" << std::endl;
-}
-
-void Zombie::announce(void)
-{
-	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+class DiamondTrap : public ScavTrap, public FragTrap
+{	
+private:
+	std::string name;
+	DiamondTrap();
+	DiamondTrap(std::string name);
+	DiamondTrap(const DiamondTrap &obj);
+	~DiamondTrap();
+	DiamondTrap &operator=(const DiamondTrap &obj);
+};

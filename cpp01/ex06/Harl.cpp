@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 09:54:45 by abablil           #+#    #+#             */
-/*   Updated: 2024/07/08 16:56:08 by abablil          ###   ########.fr       */
+/*   Updated: 2024/08/24 17:07:14 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void Harl::complain(std::string level)
 			(this->*handler[2])();
 		case 3:
 			(this->*handler[3])();
+			break;
 		default:
 			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}

@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/06 19:13:39 by abablil           #+#    #+#             */
-/*   Updated: 2024/08/24 15:26:36 by abablil          ###   ########.fr       */
+/*   Created: 2024/08/19 16:20:04 by abablil           #+#    #+#             */
+/*   Updated: 2024/08/22 16:44:51 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include "Weapon.hpp"
 
-class HumanB
+class ClapTrap
 {
-private:
+protected:
 	std::string name;
-	Weapon* weapon;
+	unsigned int hitPoints;
+	unsigned int energyPoints;
+	unsigned int attackDamage;
 
 public:
-	HumanB(std::string name);
-	~HumanB();
-	void	attack();
-	void	setWeapon(Weapon &weapon);
+	ClapTrap();
+	ClapTrap(std::string name);
+	ClapTrap(const ClapTrap &obj);
+	~ClapTrap();
+	ClapTrap &operator=(const ClapTrap &obj);
+	void attack(const std::string &target);
+	void takeDamage(unsigned int amount);
+	void beRepaired(unsigned int amount);
 };

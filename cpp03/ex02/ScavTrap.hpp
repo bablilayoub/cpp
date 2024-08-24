@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/06 15:14:53 by abablil           #+#    #+#             */
-/*   Updated: 2024/08/24 15:24:14 by abablil          ###   ########.fr       */
+/*   Created: 2024/08/22 12:07:31 by abablil           #+#    #+#             */
+/*   Updated: 2024/08/22 16:27:19 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#pragma once
 
-Zombie::Zombie(){}
+#include <iostream>
+#include "ClapTrap.hpp"
 
-Zombie::Zombie(std::string name)
+class ScavTrap : public ClapTrap
 {
-	this->name = name;
-}
-
-Zombie::~Zombie()
-{
-	std::cout << this->name << ": Has been destroyed" << std::endl;
-}
-
-void Zombie::announce(void)
-{
-	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+public:
+	ScavTrap();
+	ScavTrap(std::string name);
+	ScavTrap(const ScavTrap &obj);
+	~ScavTrap();
+	ScavTrap &operator=(const ScavTrap &obj);
+	void guardGate();
+	void attack(const std::string &target);
+};

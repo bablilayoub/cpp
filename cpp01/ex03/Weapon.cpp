@@ -6,13 +6,11 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 18:46:20 by abablil           #+#    #+#             */
-/*   Updated: 2024/07/06 19:12:47 by abablil          ###   ########.fr       */
+/*   Updated: 2024/08/24 15:26:51 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
-
-Weapon::~Weapon() {}
 
 Weapon::Weapon(std::string type)
 {

@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 19:39:22 by abablil           #+#    #+#             */
-/*   Updated: 2024/07/08 17:13:21 by abablil          ###   ########.fr       */
+/*   Updated: 2024/08/24 16:31:02 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ bool check_errors(int total, char **args)
 
 int main(int total, char **args)
 {
+	if (!check_errors(total, args))
+		return 1;
+
 	std::string line;
 	std::string search_string = args[2];
 	std::string replace_string = args[3];
-	
-	if (!check_errors(total, args))
-		return 1;
-		
+
 	std::ifstream in_file(args[1]);
 	if (in_file.fail())
 	{
@@ -46,6 +46,7 @@ int main(int total, char **args)
 	std::ofstream out_file(std::string(args[1]) + ".replace");
 	if (out_file.fail())
 	{
+		in_file.close();
 		std::cout << "Failed to open file" << std::endl;
 		return 1;
 	}
@@ -56,7 +57,7 @@ int main(int total, char **args)
 		while (i < line.length())
 		{
 			size_t found_pos = line.find(search_string, i);
-			if (found_pos < line.length())
+			if (found_pos != std::string::npos)
 			{
 				new_line.append(line, i, found_pos - i);
 				new_line.append(replace_string);

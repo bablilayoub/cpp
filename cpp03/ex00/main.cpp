@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/06 15:14:53 by abablil           #+#    #+#             */
-/*   Updated: 2024/08/24 15:24:14 by abablil          ###   ########.fr       */
+/*   Created: 2024/08/19 17:01:52 by abablil           #+#    #+#             */
+/*   Updated: 2024/08/22 12:00:56 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "ClapTrap.hpp"
 
-Zombie::Zombie(){}
-
-Zombie::Zombie(std::string name)
+int main()
 {
-	this->name = name;
-}
-
-Zombie::~Zombie()
-{
-	std::cout << this->name << ": Has been destroyed" << std::endl;
-}
-
-void Zombie::announce(void)
-{
-	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	ClapTrap clapTrap("default");
+	clapTrap.attack("target");
+	clapTrap.takeDamage(5);
+	clapTrap.takeDamage(5);
+	clapTrap.takeDamage(5);
+	clapTrap.beRepaired(5);
+	clapTrap.takeDamage(5);
+	clapTrap.takeDamage(5);
+	return 0;
 }
