@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 14:12:15 by abablil           #+#    #+#             */
-/*   Updated: 2024/07/19 18:46:42 by abablil          ###   ########.fr       */
+/*   Updated: 2024/08/27 15:44:26 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,15 @@ int main(void)
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 	std::cout << Fixed::max(a, b) << std::endl;
+	std::cout << Fixed::min(a, b) << std::endl;
+	if (a > b)
+		std::cout << "a > b" << std::endl;
+	else if (a < b)
+		std::cout << "a < b" << std::endl;
+	if (a != b)
+		std::cout << "a != b" << std::endl;
+	std::cout << b + a << std::endl;
+	std::cout << b * a << std::endl;
+	std::cout << b / a << std::endl;
 	return 0;
 }
