@@ -6,11 +6,10 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 14:12:15 by abablil           #+#    #+#             */
-/*   Updated: 2024/08/27 14:38:41 by abablil          ###   ########.fr       */
+/*   Updated: 2024/08/27 16:01:52 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Point.hpp"
 
 int main(void)

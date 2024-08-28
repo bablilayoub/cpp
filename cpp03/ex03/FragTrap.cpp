@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 12:07:28 by abablil           #+#    #+#             */
-/*   Updated: 2024/08/22 16:28:42 by abablil          ###   ########.fr       */
+/*   Updated: 2024/08/28 18:45:30 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,6 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap " << this->name << " destructor called" << std::endl;
-}
-
-void FragTrap::guardGate()
-{
-	std::cout << "FragTrap " << this->name << " is now in Gate keeper mode" << std::endl;
 }
 
 void FragTrap::highFivesGuys()

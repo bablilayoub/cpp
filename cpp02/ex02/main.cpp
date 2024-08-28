@@ -6,11 +6,10 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 14:12:15 by abablil           #+#    #+#             */
-/*   Updated: 2024/08/27 15:44:26 by abablil          ###   ########.fr       */
+/*   Updated: 2024/08/27 16:02:11 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Fixed.hpp"
 
 int main(void)

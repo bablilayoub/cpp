@@ -6,12 +6,14 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 11:35:50 by abablil           #+#    #+#             */
-/*   Updated: 2024/08/26 19:19:27 by abablil          ###   ########.fr       */
+/*   Updated: 2024/08/27 16:01:04 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {

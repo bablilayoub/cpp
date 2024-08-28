@@ -6,12 +6,11 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 09:20:49 by abablil           #+#    #+#             */
-/*   Updated: 2024/08/26 20:04:19 by abablil          ###   ########.fr       */
+/*   Updated: 2024/08/27 16:01:09 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
-#include <iostream>
 
 Point::Point() : x(0), y(0) {}
 

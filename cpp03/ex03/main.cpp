@@ -6,25 +6,26 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 17:01:52 by abablil           #+#    #+#             */
-/*   Updated: 2024/08/22 15:56:30 by abablil          ###   ########.fr       */
+/*   Updated: 2024/08/28 19:01:14 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
-	FragTrap ayoub("ayoub");
-	ayoub.guardGate();
-	ayoub.attack("target");
-	ayoub.takeDamage(25);
-	ayoub.takeDamage(25);
-	ayoub.takeDamage(30);
-	ayoub.takeDamage(1);
-	ayoub.beRepaired(100);
-	ayoub.takeDamage(50);
-	ayoub.takeDamage(50);
-	ayoub.takeDamage(1);
-	ayoub.highFivesGuys();
+	DiamondTrap diamondTrap("DiamondTrap");
+	diamondTrap.guardGate();
+	diamondTrap.attack("target");
+	diamondTrap.takeDamage(25);
+	diamondTrap.takeDamage(25);
+	diamondTrap.takeDamage(30);
+	diamondTrap.takeDamage(1);
+	diamondTrap.beRepaired(100);
+	diamondTrap.takeDamage(50);
+	diamondTrap.takeDamage(50);
+	diamondTrap.takeDamage(1);
+	diamondTrap.highFivesGuys();
+	diamondTrap.whoAmI();
 	return 0;
 }

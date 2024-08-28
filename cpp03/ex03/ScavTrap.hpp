@@ -6,13 +6,12 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 12:07:31 by abablil           #+#    #+#             */
-/*   Updated: 2024/08/22 16:45:34 by abablil          ###   ########.fr       */
+/*   Updated: 2024/08/27 21:48:57 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
 #include "ClapTrap.hpp"
 
 class ScavTrap : virtual public ClapTrap

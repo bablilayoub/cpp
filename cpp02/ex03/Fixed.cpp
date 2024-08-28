@@ -6,13 +6,11 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 11:36:01 by abablil           #+#    #+#             */
-/*   Updated: 2024/08/26 20:40:26 by abablil          ###   ########.fr       */
+/*   Updated: 2024/08/27 16:00:11 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Fixed.hpp"
-#include <cmath>
 
 Fixed::Fixed() : fixedPoint(0) {}
 
