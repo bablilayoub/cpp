@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 16:28:53 by abablil           #+#    #+#             */
-/*   Updated: 2024/08/22 15:25:42 by abablil          ###   ########.fr       */
+/*   Updated: 2024/08/31 14:40:04 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,16 +59,25 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
+	if (!this->energyPoints)
+	{
+		std::cout << "ClapTrap " << this->name << " can't be repaired" << std::endl;
+		return;
+	}
 	std::cout << "ClapTrap " << this->name << " health increased by " << amount << std::endl;
 	this->hitPoints += amount;
+	this->energyPoints--;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &obj)
 {
 	std::cout << "Assignation operator called" << std::endl;
-	this->name = obj.name;
-	this->hitPoints = obj.hitPoints;
-	this->energyPoints = obj.energyPoints;
-	this->attackDamage = obj.attackDamage;
+	if (this != &obj)
+	{
+		this->name = obj.name;
+		this->hitPoints = obj.hitPoints;
+		this->energyPoints = obj.energyPoints;
+		this->attackDamage = obj.attackDamage;
+	}
 	return *this;
 }
