@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 12:07:28 by abablil           #+#    #+#             */
-/*   Updated: 2024/08/22 16:27:00 by abablil          ###   ########.fr       */
+/*   Updated: 2024/08/31 14:49:53 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,12 @@ void FragTrap::attack(const std::string &target)
 FragTrap &FragTrap::operator=(const FragTrap &obj)
 {
 	std::cout << "FragTrap Assignation operator called" << std::endl;
-	this->name = obj.name;
-	this->hitPoints = obj.hitPoints;
-	this->energyPoints = obj.energyPoints;
-	this->attackDamage = obj.attackDamage;
+	if (this != &obj)
+	{
+		this->name = obj.name;
+		this->hitPoints = obj.hitPoints;
+		this->energyPoints = obj.energyPoints;
+		this->attackDamage = obj.attackDamage;
+	}
 	return *this;
 }

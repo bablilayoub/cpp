@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 16:12:15 by abablil           #+#    #+#             */
-/*   Updated: 2024/08/28 19:08:16 by abablil          ###   ########.fr       */
+/*   Updated: 2024/08/31 14:50:24 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ DiamondTrap::~DiamondTrap()
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &obj)
 {
 	std::cout << "DiamondTrap Assignation operator called" << std::endl;
-	this->name = obj.name;
+	if (this != &obj)
+		this->name = obj.name;
 	return *this;
 }
 
