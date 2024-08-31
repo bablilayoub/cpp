@@ -20,9 +20,9 @@ DiamondTrap::DiamondTrap()
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name)
 {
 	this->name = name;
-	this->hitPoints = FragTrap::hitPoints;
-	this->energyPoints = ScavTrap::energyPoints;
-	this->attackDamage = FragTrap::attackDamage;
+	this->hitPoints = 100;
+	this->energyPoints = 50;
+	this->attackDamage = 30;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &obj)
@@ -40,7 +40,12 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &obj)
 {
 	std::cout << "DiamondTrap Assignation operator called" << std::endl;
 	if (this != &obj)
+	{
 		this->name = obj.name;
+		this->hitPoints = obj.hitPoints;
+		this->energyPoints = obj.energyPoints;
+		this->attackDamage = obj.attackDamage;
+	}
 	return *this;
 }
 

@@ -14,7 +14,7 @@
 
 int main()
 {
-	DiamondTrap diamondTrap("DiamondTrap");
+	DiamondTrap diamondTrap("ayoub");
 	diamondTrap.guardGate();
 	diamondTrap.attack("target");
 	diamondTrap.takeDamage(25);
