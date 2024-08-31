@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 11:35:50 by abablil           #+#    #+#             */
-/*   Updated: 2024/08/27 16:02:14 by abablil          ###   ########.fr       */
+/*   Updated: 2024/08/31 16:22:09 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ public:
 	static Fixed &max(Fixed &a, Fixed &b);
 	static const Fixed &max(const Fixed &a, const Fixed &b);
 	static const Fixed &min(const Fixed &a, const Fixed &b);
-	
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
 	float toFloat(void) const;

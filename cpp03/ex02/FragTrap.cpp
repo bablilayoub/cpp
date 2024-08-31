@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 12:07:28 by abablil           #+#    #+#             */
-/*   Updated: 2024/08/31 14:49:53 by abablil          ###   ########.fr       */
+/*   Updated: 2024/08/31 20:58:00 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ FragTrap::FragTrap(const FragTrap &obj)
 	*this = obj;
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap("FragTrap")
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	this->hitPoints = 100;
 	this->energyPoints = 100;
