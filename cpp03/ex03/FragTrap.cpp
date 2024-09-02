@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 12:07:28 by abablil           #+#    #+#             */
-/*   Updated: 2024/08/31 14:50:55 by abablil          ###   ########.fr       */
+/*   Updated: 2024/09/02 17:08:50 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,6 @@ FragTrap::~FragTrap()
 void FragTrap::highFivesGuys()
 {
 	std::cout << "FragTrap " << this->name << " high fives everyone" << std::endl;
-}
-
-void FragTrap::attack(const std::string &target)
-{
-	if (!this->hitPoints || !this->energyPoints || this->attackDamage < 0)
-	{
-		std::cout << "FragTrap " << this->name << " can't attack anyone" << std::endl;
-		return;
-	}
-	this->hitPoints -= this->attackDamage;
-	this->energyPoints--;
-	std::cout << "FragTrap " << this->name << " attacks " << target << ", causing " << this->attackDamage << " points of damage!" << std::endl;
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &obj)

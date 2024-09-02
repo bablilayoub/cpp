@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 12:07:31 by abablil           #+#    #+#             */
-/*   Updated: 2024/08/28 18:45:35 by abablil          ###   ########.fr       */
+/*   Updated: 2024/09/02 17:08:43 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,5 @@ public:
 	FragTrap(const FragTrap &obj);
 	~FragTrap();
 	FragTrap &operator=(const FragTrap &obj);
-	void attack(const std::string &target);
 	void highFivesGuys(void);
 };

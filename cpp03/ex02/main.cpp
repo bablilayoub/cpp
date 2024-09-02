@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 17:01:52 by abablil           #+#    #+#             */
-/*   Updated: 2024/08/28 17:45:10 by abablil          ###   ########.fr       */
+/*   Updated: 2024/09/02 17:07:29 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int main()
 {
 	FragTrap ayoub("ayoub");
-	ayoub.guardGate();
 	ayoub.attack("target");
 	ayoub.takeDamage(25);
 	ayoub.takeDamage(25);
