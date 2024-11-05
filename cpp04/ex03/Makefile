@@ -3,9 +3,9 @@ NAME = program
 COMPILER = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp AMateria.cpp Cure.cpp Ice.cpp Character.cpp
+SRCS = main.cpp AMateria.cpp Cure.cpp Ice.cpp Character.cpp MateriaSource.cpp
 OBJS = $(SRCS:.cpp=.o)
-HEADERS = AMateria.hpp Cure.hpp Ice.hpp ICharacter.hpp Character.hpp
+HEADERS = AMateria.hpp Cure.hpp Ice.hpp ICharacter.hpp Character.hpp IMateriaSource.hpp MateriaSource.hpp
 
 $(NAME): $(OBJS)
 	$(COMPILER) $(FLAGS) $(OBJS) -o $(NAME)

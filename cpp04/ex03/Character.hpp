@@ -6,13 +6,12 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 10:57:37 by abablil           #+#    #+#             */
-/*   Updated: 2024/10/10 11:03:10 by abablil          ###   ########.fr       */
+/*   Updated: 2024/11/05 15:02:39 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
 
@@ -24,9 +23,9 @@ private:
 public:
 	Character();
 	~Character();
+	Character(std::string const &name);
 	Character(const Character &obj);
 	Character &operator=(const Character &obj);
-	Character(std::string const &name);
 	std::string const &getName() const;
 	void equip(AMateria *m);
 	void unequip(int idx);
