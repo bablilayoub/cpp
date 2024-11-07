@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 10:57:24 by abablil           #+#    #+#             */
-/*   Updated: 2024/11/05 15:04:31 by abablil          ###   ########.fr       */
+/*   Updated: 2024/11/07 22:37:26 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,12 @@ Character &Character::operator=(const Character &obj)
 		for (int i = 0; i < 4; i++)
 		{
 			if (this->materia[i])
+			{
 				delete this->materia[i];
-			this->materia[i] = obj.materia[i]->clone();
+				this->materia[i] = NULL;
+			}
+			if (obj.materia[i])
+				this->materia[i] = obj.materia[i]->clone();
 		}
 	}
 	return *this;
