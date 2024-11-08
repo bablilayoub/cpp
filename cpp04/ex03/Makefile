@@ -1,7 +1,7 @@
 NAME = program
 
 COMPILER = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address -g
 
 SRCS = main.cpp AMateria.cpp Cure.cpp Ice.cpp Character.cpp MateriaSource.cpp
 OBJS = $(SRCS:.cpp=.o)
