@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 18:39:01 by abablil           #+#    #+#             */
-/*   Updated: 2024/09/03 16:04:00 by abablil          ###   ########.fr       */
+/*   Updated: 2024/11/09 17:40:22 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ public:
 	Animal &operator=(const Animal &obj);
 	virtual ~Animal();
 	std::string getType() const;
-	virtual void	makeSound() const;
+	virtual void makeSound() const;
 };

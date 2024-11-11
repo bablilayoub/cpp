@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 15:27:53 by abablil           #+#    #+#             */
-/*   Updated: 2024/11/08 15:57:22 by abablil          ###   ########.fr       */
+/*   Updated: 2024/11/11 14:47:18 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,8 @@
 #include "Ice.hpp"
 #include "Cure.hpp"
 
-void f()
-{
-	system("leaks program");
-}
-
 int main()
 {
-	atexit(f);
 	AMateria* tmp_inventory[4];
 	for (int i = 0; i < 4; i++)
 		tmp_inventory[i] = NULL;

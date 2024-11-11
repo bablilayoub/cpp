@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 19:29:55 by abablil           #+#    #+#             */
-/*   Updated: 2024/09/03 16:19:39 by abablil          ###   ########.fr       */
+/*   Updated: 2024/11/09 17:40:19 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,12 @@ Animal &Animal::operator=(const Animal &obj)
 	return *this;
 }
 
-std::string Animal::getType() const {
-    return type;
+std::string Animal::getType() const
+{
+	return type;
 }
 
 void Animal::makeSound() const
 {
-    std::cout << this->type << " makes a sound" << std::endl;
+	std::cout << this->type << " makes a sound" << std::endl;
 }

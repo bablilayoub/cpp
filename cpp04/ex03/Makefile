@@ -1,7 +1,7 @@
 NAME = program
 
 COMPILER = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address -g
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp AMateria.cpp Cure.cpp Ice.cpp Character.cpp MateriaSource.cpp
 OBJS = $(SRCS:.cpp=.o)
@@ -22,3 +22,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean $(NAME)
+
+.PHONY: clean

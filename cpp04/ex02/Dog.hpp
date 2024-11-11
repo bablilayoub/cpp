@@ -6,13 +6,12 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 18:39:01 by abablil           #+#    #+#             */
-/*   Updated: 2024/09/08 15:45:29 by abablil          ###   ########.fr       */
+/*   Updated: 2024/11/09 18:19:22 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
 #include "Animal.hpp"
 #include "Brain.hpp"
 

@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 15:34:46 by abablil           #+#    #+#             */
-/*   Updated: 2024/09/03 19:56:57 by abablil          ###   ########.fr       */
+/*   Updated: 2024/11/09 18:17:58 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 
 int main()
 {
+	// const Animal* meta = new Animal(); // Error: Animal is an abstract class
+	
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 	

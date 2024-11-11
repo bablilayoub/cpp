@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 15:26:20 by abablil           #+#    #+#             */
-/*   Updated: 2024/11/07 22:41:42 by abablil          ###   ########.fr       */
+/*   Updated: 2024/11/09 16:18:52 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,11 @@ void MateriaSource::learnMateria(AMateria *m)
 	{
 		if (!this->materias[i])
 		{
+			for (int j = 0; j < 4; j++)
+			{
+				if (this->materias[j] && this->materias[j]->getType() == m->getType())
+					return;
+			}
 			this->materias[i] = m;
 			break;
 		}

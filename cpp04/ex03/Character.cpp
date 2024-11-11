@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 10:57:24 by abablil           #+#    #+#             */
-/*   Updated: 2024/11/07 22:52:41 by abablil          ###   ########.fr       */
+/*   Updated: 2024/11/09 16:17:49 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,11 @@ void Character::equip(AMateria *m)
 	{
 		if (!this->materia[i])
 		{
+			for (int j = 0; j < 4; j++)
+			{
+				if (this->materia[j] == m)
+					return;
+			}
 			this->materia[i] = m;
 			break;
 		}
