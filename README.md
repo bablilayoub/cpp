@@ -9,6 +9,7 @@ This repository contains the projects that I have done during the CPP days at 13
 - [**CPP Module 02**](./cpp02): Ad-hoc polymorphism, operators overload, canonical classes.
 - [**CPP Module 03**](./cpp03): Inheritance.
 - [**CPP Module 04**](./cpp04): Subtype polymorphism, abstract classes, interfaces.
+- [**CPP Module 05**](./cpp05): Repetition and Exceptions. (In progress)
 
 ## Usage
 ```bash
@@ -19,7 +20,7 @@ git clone https://github.com/bablilayoub/cpp.git
 cd cpp
 
 # Go into the project you want
-cd cpp0[0-4]
+cd cpp0[0-5]
 
 # Compile the project
 make
