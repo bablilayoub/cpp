@@ -1,4 +1,4 @@
-# CPP Days - 1337/42 School
+# CPP Days - 1337/42 School (in progress)
 
 ## Description
 This repository contains the projects that I have done during the CPP days at 1337/42 School.
@@ -9,7 +9,7 @@ This repository contains the projects that I have done during the CPP days at 13
 - [**CPP Module 02**](./cpp02): Ad-hoc polymorphism, operators overload, canonical classes.
 - [**CPP Module 03**](./cpp03): Inheritance.
 - [**CPP Module 04**](./cpp04): Subtype polymorphism, abstract classes, interfaces.
-- [**CPP Module 05**](./cpp05): Repetition and Exceptions. (In progress)
+- [**CPP Module 05**](./cpp05): Repetition and Exceptions.
 
 ## Usage
 ```bash
