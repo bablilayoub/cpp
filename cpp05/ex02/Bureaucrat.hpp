@@ -6,16 +6,17 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 17:27:15 by abablil           #+#    #+#             */
-/*   Updated: 2024/11/16 19:46:29 by abablil          ###   ########.fr       */
+/*   Updated: 2024/11/18 17:09:29 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include "Form.hpp"
+#include <fstream>
+#include "AForm.hpp"
 
-class Form;
+class AForm;
 class Bureaucrat
 {
 private:
@@ -32,7 +33,8 @@ public:
 	int const &getGrade() const;
 	void incrementGrade();
 	void decrementGrade();
-	void signForm(Form &obj);
+	void signForm(AForm &obj);
+	void executeForm(AForm const &form);
 
 	class GradeTooHighException : public std::exception
 	{

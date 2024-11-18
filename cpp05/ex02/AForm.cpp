@@ -66,7 +66,7 @@ std::ostream &operator<<(std::ostream &os, const AForm &obj)
 	os << "Name: " << obj.getName() << std::endl;
 	os << "Is signed: " << obj.getIsSigned() << std::endl;
 	os << "Grade to sign: " << obj.getGradeToSign() << std::endl;
-	os << "Grade to execute: " << obj.getGradeToSign() << std::endl;
+	os << "Grade to execute: " << obj.getGradeToExecute() << std::endl;
 	os << "=====================================" << std::endl;
 	return os;
 }

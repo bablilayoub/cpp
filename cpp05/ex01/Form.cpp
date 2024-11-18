@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 15:41:34 by abablil           #+#    #+#             */
-/*   Updated: 2024/11/16 22:07:41 by abablil          ###   ########.fr       */
+/*   Updated: 2024/11/18 16:51:09 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ std::ostream &operator<<(std::ostream &os, const Form &obj)
 	os << "Name: " << obj.getName() << std::endl;
 	os << "Is signed: " << obj.getIsSigned() << std::endl;
 	os << "Grade to sign: " << obj.getGradeToSign() << std::endl;
-	os << "Grade to execute: " << obj.getGradeToSign() << std::endl;
+	os << "Grade to execute: " << obj.getGradeToExecute() << std::endl;
 	os << "=====================================" << std::endl;
 	return os;
 }
