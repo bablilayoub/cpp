@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 22:27:01 by abablil           #+#    #+#             */
-/*   Updated: 2024/11/18 17:13:46 by abablil          ###   ########.fr       */
+/*   Updated: 2024/11/19 15:58:29 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 class RobotomyRequestForm : public AForm
 {
 private:
-	std::string target;
+	const std::string target;
 public:
 	RobotomyRequestForm();
 	~RobotomyRequestForm();

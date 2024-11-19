@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 23:19:22 by abablil           #+#    #+#             */
-/*   Updated: 2024/11/18 18:04:42 by abablil          ###   ########.fr       */
+/*   Updated: 2024/11/19 15:58:25 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,7 @@ RobotomyRequestForm::~RobotomyRequestForm() {}
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &obj)
 {
 	if (this != &obj)
-	{
 		AForm::operator=(obj);
-		this->target = obj.target;
-	}
 	return (*this);
 }
 

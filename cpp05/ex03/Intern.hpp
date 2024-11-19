@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 18:07:48 by abablil           #+#    #+#             */
-/*   Updated: 2024/11/18 20:47:27 by abablil          ###   ########.fr       */
+/*   Updated: 2024/11/19 18:15:37 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,10 @@ public:
 	~Intern();
 	Intern &operator=(const Intern &obj);
 	AForm *makeForm(std::string name, std::string target);
+	
+	AForm *createShrubberyCreationForm(std::string target);
+	AForm *createRobotomyRequestForm(std::string target);
+	AForm *createPresidentialPardonForm(std::string target);
 };
+
+typedef AForm *(Intern::*FormHandler)(std::string target);

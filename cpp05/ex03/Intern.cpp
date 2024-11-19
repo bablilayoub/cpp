@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 18:15:07 by abablil           #+#    #+#             */
-/*   Updated: 2024/11/18 20:51:41 by abablil          ###   ########.fr       */
+/*   Updated: 2024/11/19 18:20:58 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,21 @@ Intern &Intern::operator=(const Intern &obj)
 	return *this;
 }
 
+AForm *Intern::createShrubberyCreationForm(std::string target)
+{
+	return new ShrubberyCreationForm(target);
+}
+
+AForm *Intern::createRobotomyRequestForm(std::string target)
+{
+	return new RobotomyRequestForm(target);
+}
+
+AForm *Intern::createPresidentialPardonForm(std::string target)
+{
+	return new PresidentialPardonForm(target);
+}
+
 AForm *Intern::makeForm(std::string name, std::string target)
 {
 	if (name.empty() || target.empty())
@@ -33,24 +48,20 @@ AForm *Intern::makeForm(std::string name, std::string target)
 	}
 
 	std::string forms[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
+
+	FormHandler handlers[3] = {
+		&Intern::createShrubberyCreationForm,
+		&Intern::createRobotomyRequestForm,
+		&Intern::createPresidentialPardonForm
+	};
+
 	AForm *form = NULL;
 
 	for (int i = 0; i < 3; i++)
 	{
 		if (name == forms[i])
 		{
-			switch (i)
-			{
-			case 0:
-				form = new ShrubberyCreationForm(target);
-				break;
-			case 1:
-				form = new RobotomyRequestForm(target);
-				break;
-			case 2:
-				form = new PresidentialPardonForm(target);
-				break;
-			}
+			form = (this->*handlers[i])(target);
 			std::cout << "Intern creates " << form->getName() << std::endl;
 			return form;
 		}
