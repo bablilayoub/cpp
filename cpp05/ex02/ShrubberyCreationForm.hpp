@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 22:27:01 by abablil           #+#    #+#             */
-/*   Updated: 2024/11/18 17:09:18 by abablil          ###   ########.fr       */
+/*   Updated: 2024/11/19 15:57:38 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 class ShrubberyCreationForm : public AForm
 {
 private:
-	std::string target;
+	const std::string target;
 public:
 	ShrubberyCreationForm();
 	~ShrubberyCreationForm();
