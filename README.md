@@ -10,6 +10,7 @@ This repository contains the projects that I have done during the CPP days at 13
 - [**CPP Module 03**](./cpp03): Inheritance.
 - [**CPP Module 04**](./cpp04): Subtype polymorphism, abstract classes, interfaces.
 - [**CPP Module 05**](./cpp05): Repetition and Exceptions.
+- [**CPP Module 06**](./cpp06): C++ Casts. (in progress)
 
 ## Usage
 ```bash
@@ -20,7 +21,7 @@ git clone https://github.com/bablilayoub/cpp.git
 cd cpp
 
 # Go into the project you want
-cd cpp0[0-5]
+cd cpp0[0-6]
 
 # Compile the project
 make
