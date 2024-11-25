@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.cpp                                :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 17:26:53 by abablil           #+#    #+#             */
-/*   Updated: 2024/11/25 21:36:18 by abablil          ###   ########.fr       */
+/*   Created: 2024/11/25 21:46:52 by abablil           #+#    #+#             */
+/*   Updated: 2024/11/25 21:50:26 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
-ScalarConverter::ScalarConverter() {}
-
-void ScalarConverter::convert(const std::string& literal)
+int main(int ac, char **args)
 {
-	Convert convert;
-	
-	convert.execute(literal);
+	if (ac == 2)
+	{
+		ScalarConverter::convert(std::string(args[1]));
+		return 0;
+	}
+	std::cout << "Invalid number of arguments" << std::endl;
+	return 1;
 }

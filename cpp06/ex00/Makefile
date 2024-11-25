@@ -3,9 +3,9 @@ NAME = program
 COMPILER = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp Bureaucrat.cpp
+SRCS = main.cpp ScalarConverter.cpp Convert.cpp
 OBJS = $(SRCS:.cpp=.o)
-HEADERS = Bureaucrat.hpp
+HEADERS = ScalarConverter.hpp Convert.hpp
 
 $(NAME): $(OBJS)
 	$(COMPILER) $(FLAGS) $(OBJS) -o $(NAME)

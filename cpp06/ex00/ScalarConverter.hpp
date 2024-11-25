@@ -6,13 +6,18 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 17:25:57 by abablil           #+#    #+#             */
-/*   Updated: 2024/11/22 17:57:14 by abablil          ###   ########.fr       */
+/*   Updated: 2024/11/25 22:06:49 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include <iomanip>
+#include <limits>
+#include "Convert.hpp"
+
+class Convert;
 
 class ScalarConverter
 {
