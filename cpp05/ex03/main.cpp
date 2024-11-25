@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 18:12:31 by abablil           #+#    #+#             */
-/*   Updated: 2024/11/19 18:15:56 by abablil          ###   ########.fr       */
+/*   Updated: 2024/11/25 18:21:07 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int main()
 	delete form1;
 	delete form2;
 	delete form3;
-	delete form4;
-
+	
 	return 0;
 }
