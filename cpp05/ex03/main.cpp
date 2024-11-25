@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 18:12:31 by abablil           #+#    #+#             */
-/*   Updated: 2024/11/25 18:21:45 by abablil          ###   ########.fr       */
+/*   Updated: 2024/11/25 18:21:48 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int main()
 	Intern intern;
 	
 	Bureaucrat bureaucrat("bureaucrat", 1);
-
 	AForm *form1 = intern.makeForm("shrubbery creation", "target1");
 	AForm *form2 = intern.makeForm("robotomy request", "target2");
 	AForm *form3 = intern.makeForm("presidential pardon", "target3");

@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 17:59:25 by abablil           #+#    #+#             */
-/*   Updated: 2024/11/25 22:15:37 by abablil          ###   ########.fr       */
+/*   Updated: 2024/11/25 23:53:27 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,7 +127,6 @@ bool Convert::isDouble(const std::string &literal)
 
 void Convert::execute(const std::string &literal)
 {
-	std::cout << std::fixed << std::setprecision(1);
 
 	if (this->isChar(literal))
 	{
