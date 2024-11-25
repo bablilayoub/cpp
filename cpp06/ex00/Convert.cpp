@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 17:59:25 by abablil           #+#    #+#             */
-/*   Updated: 2024/11/25 22:06:17 by abablil          ###   ########.fr       */
+/*   Updated: 2024/11/25 22:15:37 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,11 +127,10 @@ bool Convert::isDouble(const std::string &literal)
 
 void Convert::execute(const std::string &literal)
 {
-	std::cout << std::fixed << std::setprecision(1); // Ensure .0 for float and double outputs
+	std::cout << std::fixed << std::setprecision(1);
 
 	if (this->isChar(literal))
 	{
-		std::cout << "Im char" << std::endl;
 		char c = literal[0];
 		std::cout << "char: '" << c << "'" << std::endl;
 		std::cout << "int: " << static_cast<int>(c) << std::endl;
@@ -142,7 +141,6 @@ void Convert::execute(const std::string &literal)
 
 	if (this->isInt(literal))
 	{
-		std::cout << "Im int" << std::endl;
 		int i = std::stoi(literal);
 		std::cout << "char: " << ((i >= 32 && i <= 126) ? "'" + std::string(1, static_cast<char>(i)) + "'" : "Non displayable") << std::endl;
 		std::cout << "int: " << i << std::endl;
@@ -151,26 +149,38 @@ void Convert::execute(const std::string &literal)
 		return;
 	}
 
-	if (this->isFloat(literal))
-	{
-		std::cout << "Im float" << std::endl;
-		float f = std::stof(literal);
-		std::cout << "char: " << ((f >= 32 && f <= 126) ? "'" + std::string(1, static_cast<char>(f)) + "'" : "Non displayable") << std::endl;
-		std::cout << "int: " << (f > std::numeric_limits<int>::max() || f < std::numeric_limits<int>::min() ? "impossible" : std::to_string(static_cast<int>(f))) << std::endl;
-		std::cout << "float: " << f << "f" << std::endl;
-		std::cout << "double: " << static_cast<double>(f) << std::endl;
-		return;
-	}
+	if (this->isFloat(literal)) {
+        float f = std::stof(literal);
+
+        if (std::isnan(f) || std::isinf(f)) {
+            std::cout << "char: impossible" << std::endl;
+            std::cout << "int: impossible" << std::endl;
+        } else {
+            std::cout << "char: " << ((f >= 32 && f <= 126) ? "'" + std::string(1, static_cast<char>(f)) + "'" : "Non displayable") << std::endl;
+            std::cout << "int: " << ((f > std::numeric_limits<int>::max() || f < std::numeric_limits<int>::min()) ? "impossible" : std::to_string(static_cast<int>(f))) << std::endl;
+        }
+
+        std::cout << "float: " << f << "f" << std::endl;
+        std::cout << "double: " << static_cast<double>(f) << std::endl;
+        return;
+    }
 
 	if (this->isDouble(literal))
 	{
-		std::cout << "Im double" << std::endl;
-		double d = std::stod(literal);
-		std::cout << "char: " << ((d >= 32 && d <= 126) ? "'" + std::string(1, static_cast<char>(d)) + "'" : "Non displayable") << std::endl;
-		std::cout << "int: " << (d > std::numeric_limits<int>::max() || d < std::numeric_limits<int>::min() ? "impossible" : std::to_string(static_cast<int>(d))) << std::endl;
-		std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
-		std::cout << "double: " << d << std::endl;
-		return;
+        std::cout << "Im double" << std::endl;
+        double d = std::stod(literal);
+
+        if (std::isnan(d) || std::isinf(d)) {
+            std::cout << "char: impossible" << std::endl;
+            std::cout << "int: impossible" << std::endl;
+        } else {
+            std::cout << "char: " << ((d >= 32 && d <= 126) ? "'" + std::string(1, static_cast<char>(d)) + "'" : "Non displayable") << std::endl;
+            std::cout << "int: " << ((d > std::numeric_limits<int>::max() || d < std::numeric_limits<int>::min()) ? "impossible" : std::to_string(static_cast<int>(d))) << std::endl;
+        }
+
+        std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
+        std::cout << "double: " << d << std::endl;
+        return;
 	}
 
 	std::cout << "Invalid input!" << std::endl;

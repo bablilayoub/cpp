@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 17:25:57 by abablil           #+#    #+#             */
-/*   Updated: 2024/11/25 22:06:49 by abablil          ###   ########.fr       */
+/*   Updated: 2024/11/25 22:13:42 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include <iostream>
 #include <iomanip>
 #include <limits>
+#include <cmath>
+
 #include "Convert.hpp"
 
 class Convert;
