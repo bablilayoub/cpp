@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 23:33:15 by abablil           #+#    #+#             */
-/*   Updated: 2024/11/26 23:52:08 by abablil          ###   ########.fr       */
+/*   Updated: 2024/11/26 23:59:06 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Base::~Base() {}
 
 Base *generate()
 {
-	std::srand(static_cast<unsigned>(std::time(0)));
+	std::srand(std::time(NULL));
 	int random = std::rand() % 3;
 	switch (random)
 	{
