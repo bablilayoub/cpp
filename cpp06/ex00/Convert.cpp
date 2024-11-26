@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 17:59:25 by abablil           #+#    #+#             */
-/*   Updated: 2024/11/26 12:35:36 by abablil          ###   ########.fr       */
+/*   Updated: 2024/11/26 18:21:27 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,17 +81,21 @@ bool Convert::isFloat(const std::string &literal)
 	bool dotSeen = false;
 	bool fSeen = false;
 	bool foundNumber = false;
+	bool foundSign = false;
 	size_t i = 0;
 
 	if (literal[i] == '+' || literal[i] == '-')
+	{
+		foundSign = true;
 		i++;
+	}
 	if (i == literal.length())
 		return false;
 	while (i < literal.length())
 	{
 		if (literal[i] == '.')
 		{
-			if (dotSeen || !foundNumber)
+			if (dotSeen || (!foundNumber && foundSign))
 				return false;
 			dotSeen = true;
 		}
@@ -119,17 +123,21 @@ bool Convert::isDouble(const std::string &literal)
 
 	bool dotSeen = false;
 	bool foundNumber = false;
+	bool foundSign = false;
 	size_t i = 0;
 
 	if (literal[i] == '+' || literal[i] == '-')
+	{
+		foundSign = true;
 		i++;
+	}
 	if (i == literal.length())
 		return false;
 	while (i < literal.length())
 	{
 		if (literal[i] == '.')
 		{
-			if (dotSeen || !foundNumber)
+			if (dotSeen || (!foundNumber && foundSign))
 				return false;
 			dotSeen = true;
 		}
