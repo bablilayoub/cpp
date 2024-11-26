@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 23:32:46 by abablil           #+#    #+#             */
-/*   Updated: 2024/11/26 23:51:16 by abablil          ###   ########.fr       */
+/*   Updated: 2024/11/26 23:53:49 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 #include <iostream>
 
-class A;
-class B;
-class C;
 class Base
 {
 public:
