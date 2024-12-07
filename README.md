@@ -10,7 +10,7 @@ This repository contains the projects that I have done during the CPP days at 13
 - [**CPP Module 03**](./cpp03): Inheritance.
 - [**CPP Module 04**](./cpp04): Subtype polymorphism, abstract classes, interfaces.
 - [**CPP Module 05**](./cpp05): Repetition and Exceptions.
-- [**CPP Module 06**](./cpp06): C++ Casts. (in progress)
+- [**CPP Module 06**](./cpp06): C++ Casts.
 
 ## Usage
 ```bash
