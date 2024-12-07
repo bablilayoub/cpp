@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 17:59:25 by abablil           #+#    #+#             */
-/*   Updated: 2024/11/26 19:12:49 by abablil          ###   ########.fr       */
+/*   Updated: 2024/12/07 15:22:37 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,20 +161,20 @@ void Convert::toChar(const std::string &literal)
 
 void Convert::toInt(const std::string &literal)
 {
-	int i = std::atof(literal.c_str());
+	double i = std::atof(literal.c_str());
 
 	if (i >= 32 && i <= 126)
 		std::cout << "char: '" << static_cast<char>(i) << "'" << std::endl;
 	else
 		std::cout << "char: " << "Non displayable" << std::endl;
-	std::cout << "int: " << i << std::endl;
+	std::cout << "int: " << static_cast<int>(i) << std::endl;
 	std::cout << "float: " << static_cast<float>(i) << "f" << std::endl;
 	std::cout << "double: " << static_cast<double>(i) << std::endl;
 }
 
 void Convert::toFloat(const std::string &literal)
 {
-	float f = std::atof(literal.c_str());
+	double f = std::atof(literal.c_str());
 
 	if (this->isInfOrNan(literal, true))
 	{
@@ -192,7 +192,7 @@ void Convert::toFloat(const std::string &literal)
 		else
 			std::cout << "int: " << static_cast<int>(f) << std::endl;
 	}
-	std::cout << "float: " << f << "f" << std::endl;
+	std::cout << "float: " << static_cast<float>(f) << "f" << std::endl;
 	std::cout << "double: " << static_cast<double>(f) << std::endl;
 }
 
@@ -213,10 +213,10 @@ void Convert::toDouble(const std::string &literal)
 			std::cout << "char: " << "Non displayable" << std::endl;
 		if (d > std::numeric_limits<int>::max() || d < std::numeric_limits<int>::min())
 			std::cout << "int: impossible" << std::endl;
-		else
+		else 
 			std::cout << "int: " << static_cast<int>(d) << std::endl;
 	}
-	std::cout << "float: " << static_cast<double>(d) << "f" << std::endl;
+	std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
 	std::cout << "double: " << d << std::endl;
 }
 

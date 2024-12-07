@@ -6,11 +6,23 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 15:06:32 by abablil           #+#    #+#             */
-/*   Updated: 2024/11/26 15:06:48 by abablil          ###   ########.fr       */
+/*   Updated: 2024/12/07 13:28:39 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
+
+Serializer::Serializer() {}
+
+Serializer::~Serializer() {}
+
+Serializer::Serializer(const Serializer &obj) { *this = obj; }
+
+Serializer &Serializer::operator=(const Serializer &obj)
+{
+	(void)obj;
+	return *this;
+}
 
 uintptr_t Serializer::serialize(Data *ptr)
 {
