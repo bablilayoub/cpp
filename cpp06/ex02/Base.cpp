@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 23:33:15 by abablil           #+#    #+#             */
-/*   Updated: 2024/12/07 14:24:08 by abablil          ###   ########.fr       */
+/*   Updated: 2024/12/08 15:40:51 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Base *generate()
 	case 2:
 		return new C();
 	}
-	return nullptr;
+	return NULL;
 }
 
 void identify(Base *p)

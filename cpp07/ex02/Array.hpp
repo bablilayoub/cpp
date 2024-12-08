@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 22:51:51 by abablil           #+#    #+#             */
-/*   Updated: 2024/12/07 23:12:35 by abablil          ###   ########.fr       */
+/*   Updated: 2024/12/08 15:40:51 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ private:
 	unsigned int n;
 
 public:
-	Array() : elements(nullptr), n(0) {}
+	Array() : elements(NULL), n(0) {}
 
 	Array(unsigned int n) : elements(new T[n]), n(n) {}
 
