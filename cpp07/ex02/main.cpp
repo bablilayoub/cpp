@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 18:27:22 by abablil           #+#    #+#             */
-/*   Updated: 2024/12/07 23:11:45 by abablil          ###   ########.fr       */
+/*   Updated: 2024/12/08 15:32:41 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int main()
 	Array<int> arr1;
 	std::cout << "arr1 size: " << arr1.size() << std::endl;
 
+	std::cout << "------------------" << std::endl;
+
 	// Test constructor with size
 	Array<int> arr2(5);
 	std::cout << "arr2 size: " << arr2.size() << std::endl;
@@ -26,11 +28,15 @@ int main()
 	for (unsigned int i = 0; i < arr2.size(); ++i)
 		std::cout << "arr2[" << i << "] = " << arr2[i] << std::endl;
 
+	std::cout << "------------------" << std::endl;
+
 	// Test copy constructor
 	Array<int> arr3(arr2);
 	std::cout << "arr3 size: " << arr3.size() << std::endl;
 	for (unsigned int i = 0; i < arr3.size(); ++i)
 		std::cout << "arr3[" << i << "] = " << arr3[i] << std::endl;
+
+	std::cout << "------------------" << std::endl;
 
 	// Test assignment operator
 	Array<int> arr4;
@@ -38,6 +44,8 @@ int main()
 	std::cout << "arr4 size: " << arr4.size() << std::endl;
 	for (unsigned int i = 0; i < arr4.size(); ++i)
 		std::cout << "arr4[" << i << "] = " << arr4[i] << std::endl;
+
+	std::cout << "------------------" << std::endl;
 
 	// Test out of bounds access
 	try
@@ -48,6 +56,5 @@ int main()
 	{
 		std::cerr << "Caught exception: " << e.what() << std::endl;
 	}
-
 	return 0;
 }
