@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 16:54:57 by abablil           #+#    #+#             */
-/*   Updated: 2024/12/10 18:20:43 by abablil          ###   ########.fr       */
+/*   Updated: 2024/12/10 21:43:28 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 #include <iostream>
 #include <algorithm>
 #include <stack>
-#include <deque>
-#include <vector>
 
 template <typename T>
 class MutantStack : public std::stack<T>

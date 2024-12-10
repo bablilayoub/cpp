@@ -12,6 +12,7 @@ This repository contains the projects that I have done during the CPP days at 13
 - [**CPP Module 05**](./cpp05): Repetition and Exceptions.
 - [**CPP Module 06**](./cpp06): C++ Casts.
 - [**CPP Module 07**](./cpp07): C++ templates.
+- [**CPP Module 08**](./cpp08): Templated containers, iterators, algorithms.
 
 ## Usage
 ```bash
@@ -22,7 +23,7 @@ git clone https://github.com/bablilayoub/cpp.git
 cd cpp
 
 # Go into the project you want
-cd cpp0[0-7]
+cd cpp0[0-8]
 
 # Compile the project
 make

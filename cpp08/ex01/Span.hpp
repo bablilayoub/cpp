@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:42:58 by abablil           #+#    #+#             */
-/*   Updated: 2024/12/10 16:43:29 by abablil          ###   ########.fr       */
+/*   Updated: 2024/12/10 19:48:36 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <stdexcept>
 #include <algorithm>
 #include <vector>
+#include <iterator>
 
 typedef std::vector<int>::iterator vec_iter;
 
