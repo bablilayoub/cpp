@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:42:58 by abablil           #+#    #+#             */
-/*   Updated: 2024/12/09 21:53:04 by abablil          ###   ########.fr       */
+/*   Updated: 2024/12/10 16:43:29 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <stdexcept>
 #include <algorithm>
 #include <vector>
+
+typedef std::vector<int>::iterator vec_iter;
 
 class Span
 {
@@ -32,7 +34,6 @@ public:
 	void addNumber(int number);
 	int shortestSpan();
 	int longestSpan();
-	template <typename InputIt>
-	void addRange(InputIt first, InputIt last);
+	void addRange(vec_iter begin, vec_iter end);
 };
 

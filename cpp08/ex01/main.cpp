@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 20:30:32 by abablil           #+#    #+#             */
-/*   Updated: 2024/12/09 21:38:31 by abablil          ###   ########.fr       */
+/*   Updated: 2024/12/10 16:42:42 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,25 @@ int main()
 
 	std::cout << "-----------------------" << std::endl;
 
-	// Full test
+	// addRange test
+	try
+	{
+		Span sp = Span(10000);
+		std::vector<int> values;
+		values.push_back(10);
+		values.push_back(500);
+		values.push_back(20);
+		values.push_back(5);
+		values.push_back(30);
+		values.push_back(1);
 
+		sp.addRange(values.begin(), values.end());
+		std::cout << sp.shortestSpan() << std::endl;
+		std::cout << sp.longestSpan() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	return 0;
 }
