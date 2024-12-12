@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 20:52:36 by abablil           #+#    #+#             */
-/*   Updated: 2024/12/12 21:20:28 by abablil          ###   ########.fr       */
+/*   Updated: 2024/12/12 22:44:25 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ RPN::RPN(const std::string &value)
 {
 	std::stringstream buffer(value);
 	std::string word;
-	size_t result = 0;
+	int result = 0;
 
 	while (buffer >> word)
 	{
@@ -41,8 +41,8 @@ RPN::RPN(const std::string &value)
 
 void RPN::process(const std::string &operation)
 {
-	size_t first;
-	size_t second;
+	int first;
+	int second;
 	char op = operation[0];
 
 	second = numbers.top();
