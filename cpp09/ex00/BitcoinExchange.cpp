@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 15:57:43 by abablil           #+#    #+#             */
-/*   Updated: 2024/12/11 22:56:03 by abablil          ###   ########.fr       */
+/*   Updated: 2024/12/12 22:24:23 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,21 @@ BitcoinExchange::BitcoinExchange(const std::string &dbFile)
 
 double BitcoinExchange::getExchangeRate(const std::string &date) const
 {
-	std::map<std::string, double>::const_iterator it = database.lower_bound(date);
-	if (it != database.begin())
-		--it;
-	return it->second;
+	std::map<std::string, double>::const_iterator it;
+	std::map<std::string, double>::const_iterator prev = database.end();
+
+	for (it = database.begin(); it != database.end(); ++it)
+	{
+		if (it->first == date)
+			return it->second;
+		if (it->first > date)
+			break;
+		prev = it;
+	}
+
+	if (prev != database.end())
+		return prev->second;
+	return -1;
 }
 
 bool BitcoinExchange::isLeapYear(int year)
@@ -48,18 +59,18 @@ bool BitcoinExchange::isValidDate(const std::string &date)
 {
 	if (date.length() != 11 || date[4] != '-' || date[7] != '-' || date[10] != ' ')
 		return false;
+
 	int year = std::atoi(date.substr(0, 4).c_str());
 	int month = std::atoi(date.substr(5, 2).c_str());
 	int day = std::atoi(date.substr(8, 2).c_str());
+
 	if (year < 0 || month < 1 || month > 12 || day < 1 || day > 31)
 		return false;
+
 	if (month == 2)
-	{
-		if (isLeapYear(year) && day > 29)
+		if ((isLeapYear(year) && day > 29) || (!isLeapYear(year) && day > 28))
 			return false;
-		if (!isLeapYear(year) && day > 28)
-			return false;
-	}
+
 	if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
 		return false;
 	return true;
@@ -68,7 +79,6 @@ bool BitcoinExchange::isValidDate(const std::string &date)
 void BitcoinExchange::loadDatabase()
 {
 	std::ifstream file("data.csv");
-
 	if (!file.is_open())
 		throw std::runtime_error("Error: could not open database file.");
 
@@ -99,18 +109,13 @@ bool BitcoinExchange::isValidRate(const std::string &rate)
 	{
 		if (rate[i] == '.')
 		{
-			if (seenDot)
+			if (seenDot || lastNumberIndex == 0)
 			{
 				std::cout << "Error: invalid value." << std::endl;
 				return false;
 			}
 			dotIndex = i;
 			seenDot = true;
-			if (lastNumberIndex == 0)
-			{
-				std::cout << "Error: invalid value." << std::endl;
-				return false;
-			}
 		}
 		else if (!std::isdigit(rate[i]))
 		{
@@ -147,22 +152,15 @@ void BitcoinExchange::startProcessing(const std::string &dbFile)
 		throw std::runtime_error("Error: database path can't be empty");
 
 	std::ifstream file(dbFile);
-
 	if (!file.is_open())
 		throw std::runtime_error("Error: could not open database file.");
 
 	std::string line;
-
 	std::getline(file, line);
-	if (line.size() == 0)
+	if (line.size() == 0 || line != "date | value")
 	{
 		file.close();
 		throw std::runtime_error("Error: Invalid file format.");
-	}
-	if (line != "date | value")
-	{
-		file.close();
-		throw std::runtime_error("Error: Invalid input.");
 	}
 	while (std::getline(file, line))
 	{
@@ -174,7 +172,6 @@ void BitcoinExchange::startProcessing(const std::string &dbFile)
 		}
 
 		std::string date = line.substr(0, line.find('|'));
-
 		if (!this->isValidDate(date))
 		{
 			std::cout << "Error: bad input => " << date << std::endl;
@@ -182,12 +179,17 @@ void BitcoinExchange::startProcessing(const std::string &dbFile)
 		}
 
 		std::string rateStr = line.substr(line.find('|') + 1);
-
 		if (!this->isValidRate(rateStr))
 			continue;
 
 		double value = atof(rateStr.c_str());
 		double rate = getExchangeRate(date);
+		if (rate == -1)
+		{
+			std::cerr << "Error: no exchange rate found for date " << date << std::endl;
+			continue;
+		}
+
 		std::string newValue = std::to_string(value * rate);
 		int i = newValue.size() - 1;
 		while (newValue[i] == '0')
