@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 15:57:43 by abablil           #+#    #+#             */
-/*   Updated: 2024/12/12 22:24:23 by abablil          ###   ########.fr       */
+/*   Updated: 2024/12/12 23:05:35 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,6 +146,43 @@ bool BitcoinExchange::isValidRate(const std::string &rate)
 	return true;
 }
 
+void BitcoinExchange::parseLine(const std::string &line)
+{
+	if (line.size() == 0)
+	{
+		std::cout << "Line can't be empty" << std::endl;
+		return;
+	}
+
+	std::size_t pipePos = line.find('|');
+	if (pipePos == std::string::npos)
+	{
+		std::cout << "Error: bad input => " << line << std::endl;
+		return;
+	}
+
+	std::string date = line.substr(0, line.find('|'));
+	if (!this->isValidDate(date))
+	{
+		std::cout << "Error: bad input => " << date << std::endl;
+		return;
+	}
+
+	std::string rateStr = line.substr(line.find('|') + 1);
+	if (!this->isValidRate(rateStr))
+		return;
+
+	double value = atof(rateStr.c_str());
+	double rate = getExchangeRate(date);
+	if (rate == -1)
+	{
+		std::cerr << "Error: no exchange rate found for date " << date << std::endl;
+		return;
+	}
+
+	std::cout << date << " => " << value << " = " << value * rate << std::endl;
+}
+
 void BitcoinExchange::startProcessing(const std::string &dbFile)
 {
 	if (dbFile.empty())
@@ -163,40 +200,6 @@ void BitcoinExchange::startProcessing(const std::string &dbFile)
 		throw std::runtime_error("Error: Invalid file format.");
 	}
 	while (std::getline(file, line))
-	{
-		std::size_t dotPos = line.find('|');
-		if (dotPos == std::string::npos)
-		{
-			std::cout << "Error: invalid input." << std::endl;
-			continue;
-		}
-
-		std::string date = line.substr(0, line.find('|'));
-		if (!this->isValidDate(date))
-		{
-			std::cout << "Error: bad input => " << date << std::endl;
-			continue;
-		}
-
-		std::string rateStr = line.substr(line.find('|') + 1);
-		if (!this->isValidRate(rateStr))
-			continue;
-
-		double value = atof(rateStr.c_str());
-		double rate = getExchangeRate(date);
-		if (rate == -1)
-		{
-			std::cerr << "Error: no exchange rate found for date " << date << std::endl;
-			continue;
-		}
-
-		std::string newValue = std::to_string(value * rate);
-		int i = newValue.size() - 1;
-		while (newValue[i] == '0')
-			i--;
-		if (newValue[i] == '.')
-			i--;
-		std::cout << date << " => " << value << " = " << newValue.substr(0, i + 1) << std::endl;
-	}
+		parseLine(line);
 	file.close();
 }
