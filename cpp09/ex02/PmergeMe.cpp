@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:02:55 by abablil           #+#    #+#             */
-/*   Updated: 2024/12/14 17:56:07 by abablil          ###   ########.fr       */
+/*   Updated: 2024/12/14 18:16:25 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,12 +170,13 @@ clock_t PmergeMe::runVector(int ac, char **args, bool &printed)
 
     clock_t time = clock();
     this->startSorting(biggerNumbers, lowerNumbers, oddNumber);
+    time = clock() - time;
     if (!printed)
     {
         this->print(ac, args, biggerNumbers);
         printed = true;
     }
-    return clock() - time;
+    return time;
 }
 
 clock_t PmergeMe::runDeque(int ac, char **args, bool &printed)
@@ -188,20 +189,24 @@ clock_t PmergeMe::runDeque(int ac, char **args, bool &printed)
 
     clock_t time = clock();
     this->startSorting(biggerNumbers, lowerNumbers, oddNumber);
+    time = clock() - time;
     if (!printed)
     {
         this->print(ac, args, biggerNumbers);
         printed = true;
     }
-    return clock() - time;
+    return time;
 }
 
 void PmergeMe::run(int ac, char **args)
 {
     bool printed = false;
-    clock_t a = this->runVector(ac, args, printed);
-    clock_t b = this->runDeque(ac, args, printed);
+    clock_t vectorTime = this->runVector(ac, args, printed);
+    clock_t dequeTime = this->runDeque(ac, args, printed);
 
-    std::cout << "Time to process a range of " << ac - 1 << " elements with std::vector : " << a << "ms" << std::endl;
-    std::cout << "Time to process a range of " << ac - 1 << " elements with std::deque : " << b << "ms" << std::endl;
+    double vectorMs = (vectorTime * 1000.0) / CLOCKS_PER_SEC;
+    double dequeMs = (dequeTime * 1000.0) / CLOCKS_PER_SEC;
+
+    std::cout << "Time to process a range of " << ac - 1 << " elements with std::vector : " << vectorMs << " ms" << std::endl;
+    std::cout << "Time to process a range of " << ac - 1 << " elements with std::deque : " << dequeMs << " ms" << std::endl;
 }
