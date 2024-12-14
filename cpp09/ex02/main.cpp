@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:07:39 by abablil           #+#    #+#             */
-/*   Updated: 2024/12/14 16:56:13 by abablil          ###   ########.fr       */
+/*   Updated: 2024/12/14 17:45:19 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ int main(int ac, char **args)
 	try
 	{
 		PmergeMe app;
-		app.runVector(ac, args);
-		app.runDeque(ac, args);
+		app.run(ac, args);
 	}
 	catch (std::exception &e)
 	{
