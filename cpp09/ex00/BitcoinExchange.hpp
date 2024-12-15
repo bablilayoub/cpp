@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 15:57:43 by abablil           #+#    #+#             */
-/*   Updated: 2024/12/12 23:03:51 by abablil          ###   ########.fr       */
+/*   Updated: 2024/12/15 15:58:22 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <map>
 #include <fstream>
 #include <sstream>
+#include <iomanip>
 
 class BitcoinExchange
 {
@@ -30,7 +31,8 @@ private:
 	double getExchangeRate(const std::string &date) const;
 	bool isLeapYear(int year);
 	void parseLine(const std::string &line);
-
+	std::string formatRate(double result);
+	
 public:
 	BitcoinExchange();
 	BitcoinExchange(const std::string &dbFile);

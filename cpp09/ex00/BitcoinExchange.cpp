@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 15:57:43 by abablil           #+#    #+#             */
-/*   Updated: 2024/12/12 23:05:35 by abablil          ###   ########.fr       */
+/*   Updated: 2024/12/15 15:58:13 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,6 +146,17 @@ bool BitcoinExchange::isValidRate(const std::string &rate)
 	return true;
 }
 
+std::string BitcoinExchange::formatRate(double result)
+{
+	std::string newValue = std::to_string(result);
+	int i = newValue.size() - 1;
+	while (newValue[i] == '0')
+		i--;
+	if (newValue[i] == '.')
+		i--;
+	return newValue.substr(0, i + 1);
+}
+
 void BitcoinExchange::parseLine(const std::string &line)
 {
 	if (line.size() == 0)
@@ -179,8 +190,7 @@ void BitcoinExchange::parseLine(const std::string &line)
 		std::cerr << "Error: no exchange rate found for date " << date << std::endl;
 		return;
 	}
-
-	std::cout << date << " => " << value << " = " << value * rate << std::endl;
+	std::cout << date << " => " << value << " = " << this->formatRate(value * rate) << std::endl;
 }
 
 void BitcoinExchange::startProcessing(const std::string &dbFile)
