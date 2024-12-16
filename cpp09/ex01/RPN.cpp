@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 20:52:36 by abablil           #+#    #+#             */
-/*   Updated: 2024/12/12 22:44:25 by abablil          ###   ########.fr       */
+/*   Updated: 2024/12/16 15:26:13 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ RPN::~RPN() {}
 
 RPN::RPN(const std::string &value)
 {
+	if (value.empty())
+		throw std::logic_error("Error");
 	std::stringstream buffer(value);
 	std::string word;
 	int result = 0;

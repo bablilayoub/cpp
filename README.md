@@ -1,4 +1,4 @@
-# CPP Days - 1337/42 School (in progress)
+# CPP Days - 1337/42 School
 
 ## Description
 This repository contains the projects that I have done during the CPP days at 1337/42 School.
@@ -13,7 +13,7 @@ This repository contains the projects that I have done during the CPP days at 13
 - [**CPP Module 06**](./cpp06): C++ Casts.
 - [**CPP Module 07**](./cpp07): C++ templates.
 - [**CPP Module 08**](./cpp08): Templated containers, iterators, algorithms.
-- [**CPP Module 09**](./cpp09): STL. (in progress)
+- [**CPP Module 09**](./cpp09): STL.
 
 ## Usage
 ```bash

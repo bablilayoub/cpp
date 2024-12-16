@@ -6,7 +6,7 @@
 /*   By: abablil <abablil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 20:45:57 by abablil           #+#    #+#             */
-/*   Updated: 2024/12/13 17:41:11 by abablil          ###   ########.fr       */
+/*   Updated: 2024/12/16 15:26:57 by abablil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(int ac, char **args)
 {
 	if (ac != 2)
 	{
-		std::cout << "Usage : ./rpn \"eg: 4 1 -\"" << std::endl;
+		std::cout << "Usage : ./RPN \"eg: 4 1 -\"" << std::endl;
 		return 1;
 	}
 	try
